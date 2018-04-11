@@ -8,6 +8,7 @@
 ### 项目截图
 <a href="./art/meizi.png"><img src="./art/meizi.png" width="40%"/></a><img height="0" width="8px"/><a href="./art/setting.png"><img src="./art/setting.png" width="40%"/></a>
 
+体验地址: [app-release-v1.0.apk](https://github.com/simplebam/Beauty/releases/download/v1.0/app-release-v1.0.apk)
 
 ### 项目中用到的知识
 * 命名规范-这里主要参考Blankj:[Android 开发规范（完结版） - 简书](https://www.jianshu.com/p/45c1675bec69)

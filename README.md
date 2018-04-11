@@ -16,6 +16,7 @@
 ### 项目截图
 <a href="./art/meizi.png"><img src="./art/meizi.png" width="40%"/></a><img height="0" width="8px"/><a href="./art/setting.png"><img src="./art/setting.png" width="40%"/></a>
 
+体验地址: [app-release-v1.0.apk](https://github.com/simplebam/Beauty/releases/download/v1.0/app-release-v1.0.apk)
 
 ### 模仿项目感言
 * 在学习Android技术上,最好的学习办法就是根据项目去掌握知识,这方面我有过很深的坑

@@ -11,14 +11,15 @@ android {
         versionName version_name
         ndk {
             // bugtags重要配置:设置支持的 SO 库构架，一般而言，取你所有的库支持的构架的`交集`。
-            abiFilters 'armeabi', 'x86'
-// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'arm64-v8a'//'x86', 'x86_64', 'mips', 'mips64'
         }
 
-        //https://www.cnblogs.com/rainboy2010/p/6476076.html
-//        jackOptions {
-//            enabled=true
-//        }
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+        }
 
     }
 
