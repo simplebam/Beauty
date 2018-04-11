@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'com.bugtags.library.plugin'
+android {
+    compileSdkVersion compile_sdk_version
+    defaultConfig {
+        applicationId "com.yueyue.mybeauty"
+        minSdkVersion min_sdk_version
+        targetSdkVersion compile_sdk_version
+        versionCode version_code
+        versionName version_name
+        ndk {
+            // bugtags重要配置:设置支持的 SO 库构架，一般而言，取你所有的库支持的构架的`交集`。
+            abiFilters 'armeabi', 'x86'
+// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        //https://www.cnblogs.com/rainboy2010/p/6476076.html
+//        jackOptions {
+//            enabled=true
+//        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+realm {
+    syncEnabled = true
+}
+
+bugtags {
+    appKey "7eaf09370377125f4ba358eaa3a776a9"
+    appSecret "3158a97135a00f549ae4d95bfc313732"
+    mappingUploadEnabled true
+}
+
+//配置参考:https://blankj.com/2016/09/21/android-keep-version-unity/
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:design:$support_version"
+    implementation "com.android.support:support-v4:$support_version"
+    implementation "com.android.support:cardview-v7:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support:palette-v7:$support_version"
+
+    //comm libs
+
+    //Bugtags
+    implementation 'com.bugtags.library:bugtags-lib:latest.integration'
+    //BaseRecyclerViewAdapterHelper  https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation "com.github.cymchad:BaseRecyclerViewAdapterHelper:$cymchad_baserecyclerviewadapterhelper_version"
+
+    //blankj的android-utils-code : https://github.com/Blankj/AndroidUtilCode
+    implementation "com.blankj:utilcode:$utilcode_version"
+
+    //timber:https://github.com/JakeWharton/timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    //butterknife :https://github.com/JakeWharton/butterknife
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    //glide:    https://github.com/bumptech/glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+//    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    // 处理Json相关数据 https://github.com/google/gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //okhttp3 https://github.com/square/okhttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    //retrofit https://github.com/square/retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_adapter_version"
+    // rxandroid https://github.com/ReactiveX/RxAndroid
+    implementation "io.reactivex:rxandroid:$rxandroid_version"
+    implementation "com.artemzin.rxjava:proguard-rules:$rxjava_proguardrules_version"
+    //rxpermissions     https://github.com/tbruyelle/RxPermissions
+    implementation "com.tbruyelle.rxpermissions:rxpermissions:$tbruyelle_rxpermissions_version"
+
+    //AlipayZeroSdk   https://github.com/fython/AlipayZeroSdk
+    implementation "moe.feng:AlipayZeroSdk:$alipayzerosdk_version"
+
+    implementation "com.mikepenz:iconics-core:3.0.0@aar"
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1.original@aar'
+
+    //custom
+    compile "org.jsoup:jsoup:$jsoup_version"
+    compile 'com.github.jd-alexander:LikeButton:0.2.3'
+//    compile 'com.github.garretyoder:Colorful:1.1'//Theme color
+
+}
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- framelayout 是解决swipeRefresh造成fragment overlap的bug-->
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/btg_global_light_white">
+
+        <!--android中xml tools属性详解 - 泡在网上的日子
+            http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0309/2567.html-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:padding="@dimen/item_margin"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/picture_item"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>
